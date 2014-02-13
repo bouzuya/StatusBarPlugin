@@ -134,7 +134,7 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
 
         CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
         bounds.origin.y = statusBarFrame.size.height;
-        bounds.size.height -= statusBarFrame.size.height;
+        bounds.size.height -= statusBarFrame.size.height + (bounds.size.height - self.webView.frame.size.height);
         
         self.webView.frame = bounds;
         [self.webView.superview addSubview:_statusBarBackgroundView];
